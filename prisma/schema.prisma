@@ -13,7 +13,6 @@ datasource db {
 model User{
   id Int @id @default(autoincrement())
   name String @unique
-  movie String @unique
   vote Vote[]
   @@map("users")
 }
@@ -23,6 +22,7 @@ model Movie{
   name String @unique
 
   vote Vote[]
+  @@map("movies")
 }
 
 model Vote{

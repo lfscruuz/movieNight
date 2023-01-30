@@ -5,8 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma:seed": "npx prisma db seed"
   },
+  "prisma":{
+    "seed": "ts-node prisma/seed.ts"
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lfscruuz/poc-prisma.git"
@@ -25,6 +30,7 @@
     "pg": "^8.9.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.16",
     "@types/pg": "^8.6.6",
     "nodemon": "^2.0.20",
